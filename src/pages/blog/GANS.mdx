@@ -1,0 +1,45 @@
+import BlogPost from '../../components/BlogPost'
+import Link from '../../components/Link'
+
+export const meta = {
+	title: 'Architecturial Design using Generative Adversarial Neural Networks',
+	date: new Date('2021-07-09'),
+	description:
+		"Conceptual architectural design is a complex process that draws on past experiences and artificial creativity to generate new designs.",
+}
+
+export default ({ children }) => (
+	<BlogPost meta={meta}>{children}</BlogPost>
+)
+
+A good story to preface this article goes something like this: King Philip II of Spain wished to run a competition for who got to design a monastery in Madrid. He hired an Italian architect by the name of Giacomo Barozzi da Vignola to operate this competition of 22 architects. Seeing the submissions of the architects, Vignola did not select a winner, instead he composed his own design by collaging bits from all the competition entires. He then presented his design to the King who awarded him the commission. Of course this would make folks all kinds of mad today but the moral of the story is that most often the ideal solution lies in a collective design approach. Let me tell you a little bit about research of Deep Neural Networks (DNNs) that artificially studies designs and extracts their core ideas and forms building blocks - based on functional performance criteria - and combines them into new designs.
+
+It is known that Machine Learning research has spiked over the last 5 years thanks to fast developments in Deep Learning DNNs. Most DNN research is done in Computer Vision(CV). For example, training a DNN to recognize dogs by showing it a lot of dogs.
+
+Using DNNs in architecture design is obviously much more challenging than identifying dogs. Allow me to tell you high level about one approach to generating conceptual architectural design using Generative Adversarial Networks (GANs).
+
+Here is a link for if you want to learn about GANs before you read the rest: Here
+GANs for stylistic facade Generation and Analysis
+
+This 2D generation task involved generating building facades from two different architectural styles. The first training set used was curated with exterior photographs of buildings from the Gothic architectural style. The Gothic training dataset was comprised of 239 exterior photos of multiple Gothic buildings scraped from Google’s image search using a Python script. The second training set was the Center for Machine Perception (CMP) facade dataset (Tyleček and Šára 2013), which contains 606 photos of facades from a number of different architectural styles largely from the twentieth and twenty-first centuries. Python scripts were used to augment both training sets.
+
+In case you are used the GAN models used for this generation task and training parameters is as shown below:
+(See Linkedin Article for Images)
+
+(Don’t worry you do not need to understand that to enjoy the rest of the article)
+
+They tested this model on 500 epochs with and without data augmentation and here are the results:
+
+Top 4 are after 500 epochs with no data augmentation
+Bottom 4 are after 500 epochs with augmentation of the training set from 239 to 1000 images
+
+(See Linkedin Article for Images)
+
+In the top row of the figure, sample outputs are shown from the training set without augmentation. As with the plan generation, the small training set tended to produce images that were more abstract in appearance. Their partially finished contours suggest new Gothic compositions, but leave enough openness that the mind can make interpretive connections. In the bottom row of the figure, samples are shown from the training set with augmentation. The resolution of these samples is qualitatively much better than the training set without augmentation. In these images, entrances buttresses, archways, windows, and spires come into full view.
+
+In summary, researchers designed a DGANN (Deep Generative Adversarial Neural Network) that was trained on a small dataset of architectural works and returned pretty fair results. There is more research about generating 3D designs out of 2D image sets which is where it gets slightly more exciting but that gets a little bit more technical and you can read about it here. Now this gets more exciting when you know how GANs work with the two competing DNNs (a generator and a discriminator) and how they learn from each other which I strongly encourage you to read in the first hyperlink.
+Afternote
+
+Any-who, thank you again for reading this article about a ML process that has gained traction massively since its proposition from Ian Goodfellow at the NIPS AI conference. This new process is called GANs and I suggest you learn about them is you have any interest in ML or AI. As they may not be fitted to be implemented in enterprise, they are among the stronger AI models and will serve as a strong step toward developing computational intelligence.
+
+P.S. I know my brain goes on tangents quite often so this article may not tackle a specific purpose or represent the best of my scholarly writing but it is instead meant as a documentation of my thoughts as I explore a specific topic
