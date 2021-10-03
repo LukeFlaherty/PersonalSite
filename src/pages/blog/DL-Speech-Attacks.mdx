@@ -1,0 +1,43 @@
+import BlogPost from '../../components/BlogPost'
+import Link from '../../components/Link'
+
+export const meta = {
+	title: 'Deep Learning Speech Synthesis Attacks',
+	date: new Date('2021-10-03'),
+	description:
+		"Our voice conveys so much more than the words we speak, it is a fundemental part of our identity.  Perhaps the human voice is no longer as unique as we are used to.  Hear about how DL can take this identifier away from you.",
+}
+
+export default ({ children }) => (
+	<BlogPost meta={meta}>{children}</BlogPost>
+)
+
+Advances in deep learning have introduced a new wave of voice synthesis tools, capable of producing audio that sounds as if spoken by a target speaker. If successful, such tools in the wrong hands will enable a range of powerful attacks against both humans and machines.
+
+As has been shown in many studies, my favorite being the University of Chicago's "Hello, It's Me" study; we find that both humans and machines can be reliably fooled by synthetic speech meaning our existing defenses against synthesized speech are falling short.  Let me tell you more.
+
+Given the strong ties between our voices and our identities, a tool that successfully spoofs or mimics our voices can do severe damage in a variety of settings. 
+
+First, it could bypass voice-based authentication systems already deployed in automated customer service phone lines for banks and credit card companies (JP Morgan Chase and HSBC).  As well as user login services for mobile messaging apps like WeChat. It would also defeat user-based access controls in IoT devices such as digital home assistants (Amazon Alexa, Google Home). Finally, such tools could directly attack end users, by augmenting traditional phishing scams with a familiar human voice. 
+
+This apparently was the case in a recent scam, where attackers used the mimicked voice of a corporate CEO to order a subordinate to issue an illegitimate money transfer.
+
+So, lets avoid the conversation about how we have not really taken into account the severity of this threat and how it is kind of unstoppable with the right tech and go straight to how the voice spoofing happens.
+
+## Voice-based Spoofing Attacks
+The first way someone can attack a machine using voice spoofing is rather boring, the whole record and replay attack.  This attack is restrained by the content of the recording but cannot go unmentioned.
+
+Next, we get to some fun stuff.  Classical Machine Synthesis: Most prior work of this uses GMM based speech synthesis, which stands for Gaussian Mixture Modeling or something like that.  This was used in a real world test attack when a group called Festvox tested a snall set of synthetic speech that they generated against 5 mobile apps that support voice authentication.  The crazy part is that this reported a whoping 96% success rate.  This was tested on apps a few years ago so these classical attacks against modern speaker recognition systems remains unclear as things do tend to upgrade pretty fast.
+
+Finally, the most recent and scart is Machine Synthesis using DNNs or Deep Neural networks.  This being a relatively new concern and a hard to test one at that, to the best of my knowledge there is only one study that examined the performance of DNN-based synthesis attacks.  It did so by running 10 synthesized samples for 6 speakers against 2 locally trained speaker recognition prototypes.  Long story short, the generated speech gained access 100% of the time.  Unfortunetly, it did take a good amount of testing but that can be done without much alerting of the security.
+
+In conclusion, these attacks are getting more and more effective and complicated.  There are a few things that can be done to try and ward off this threat, here is what I came up with.
+
+First, we can just not use voice to secure our valuables, there are far better options and to use voice is short-sighted, which is probably why noone does it.
+
+Second, we can spend time trying to detect and predict when a speech synthesis attack is happening.  If a system expects that it is under this attack it can request secondary validation.
+
+## Concluding thoughts
+The tech behind how machines are able to spoof your voice is very interesting, which is worth a whole conversation about how that works, but I cannot talk with my hands in a blog post and I feel that if I were to try and describe how DNN-based Speech Synthesis worked I would need to use my hands and wave them around to convey the feeling of magic.
+
+No, but all jokes aside, this is jsut as big of a concern as the ever-so-popular deep fakes.  Our identity is important to us as a society, spoofing identity is nothing to be taken lightly.  So keep an eye out for updates on this and beware what you tell alexa :)
