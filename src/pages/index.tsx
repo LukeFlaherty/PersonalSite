@@ -153,7 +153,7 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 					I am interested in exploring drone technology, startups, nuclear
 					physics, and the metaverse. I am interested in ezploring Web 3, The
 					Metaverse, Drone Technology, Electric Rocket Propulsion, and Nuclear
-					Physics
+					Physics.
 				</Text>
 			</Text>
 		</Container>
