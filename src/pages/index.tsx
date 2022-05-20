@@ -141,15 +141,19 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 			{/* my header */}
 			<Text as="div" variant="site-intro" sx={{ display: 'contents' }}>
 				<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
-					My name is Luke The Dog Flaherty and I am an engineer.
+					My name is Luke Flaherty and I am an engineer.
 				</Heading>{' '}
 				<Heading as="h2" variant="site-intro">
 					Currently, I am working at{' '}
-					<Link href="https://deloitte.com">Deloitte</Link> creating internal ML tools to help brands win in digital sales.
+					<Link href="https://deloitte.com">Deloitte</Link> building scalale and
+					efficient E-Commerce stores for retail brands with next gen
+					technologies.
 				</Heading>{' '}
 				<Text as="p" variant="site-intro">
-					I am interested in exploring drone technology, startups, nuclear physics, and the metaverse.
-					
+					I am interested in exploring drone technology, startups, nuclear
+					physics, and the metaverse. I am interested in ezploring Web 3, The
+					Metaverse, Drone Technology, Electric Rocket Propulsion, and Nuclear
+					Physics
 				</Text>
 			</Text>
 		</Container>
