@@ -151,7 +151,7 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 				</Heading>{' '}
 				<Text as="p" variant="site-intro">
 					I am interested in exploring drone technology, startups, nuclear
-					physics, and the metaverse. I am interested in ezploring Web 3, The
+					physics, and the metaverse. I am interested in exploring Web 3, The
 					Metaverse, Drone Technology, Electric Rocket Propulsion, and Nuclear
 					Physics.
 				</Text>

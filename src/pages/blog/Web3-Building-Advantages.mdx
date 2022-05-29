@@ -1,0 +1,74 @@
+import BlogPost from '../../components/BlogPost'
+import Link from '../../components/Link'
+
+export const meta = {
+	title: 'How Web3 Applications are Inherently Pro-Consumer',
+	date: new Date('2022-05-20'),
+	description:
+		'To answer the question of "Why build in Web 3", we must look at the benefits that come with building on the Blockchain.  Here I will document the key benefits in my eyes.',
+}
+
+export default ({ children }) => (
+	<BlogPost meta={meta}>{children}</BlogPost>
+)
+
+To answer the question of "Why build in Web 3", we must look at the benefits that come with building on the Blockchain. Here I will document the key benefits in my eyes.\_
+
+Decentralization refers to the transfer of control and decision-making from a centralized entity to a distributed network, where the data is **owned** by no one and is **managed** by every participant in the network.
+
+We enjoy the benefits of personalization at the hidden expense of these centralized entities owning our data. Although ownership of our data is preferred, it would also be nice to not lose this personalization that we enjoy. Or at least be able to control how much personalization is applied. Allow me to introduce you to the idea of "Value Add Transactions" (VATs).
+
+## Value-Add Transactions (VATs)
+
+I think the best way to describe VATs would be in a scenario-based story so allow me to do so.
+
+So, as you may know our information, in a distributed system, is contained within our **wallet**. When we goto a website, if web3 enabled, it will prompt us to connect our wallet.
+
+Let's say that I am shopping for a new pair of shoes, I will go shop on the website and I am able to buy a pair of shoes through browsing the website. In order to checkout and pay with the crypto in my wallet, I must connect it. The retailer has now provided me value in buying these shoes and has recieved access to my wallet data in return.
+
+Not only have I only ever provided my data after I was given value, but given the immutable, and public nature of the blockckain's ledger, I am now able to see exactly where my data is being used and where else it is connected to. In theory, we would be able to leverage the distributed nature of the blockchain to then, rescind access to the data though a consensus method.
+
+- [Proof-Of-Stake (PoS)](https://www.fool.com/investing/stock-market/market-sectors/financials/cryptocurrency-stocks/proof-of-stake/#:~:text=Proof%20of%20stake%20is%20a,add%20them%20to%20the%20blockchain.)
+- [Proof-of-Work (PoW)](https://www.geeksforgeeks.org/proof-of-work-pow-consensus/)
+- [Practical Byzantine Fault Tolerance (PBFT](https://en.wikipedia.org/wiki/Practical_byzantine_fault_tolerance))
+- [Proof of Burn (PoB)](https://www.investopedia.com/terms/p/proof-burn-cryptocurrency.asp)
+- [Proof of Capacity (PoC)](<https://www.investopedia.com/terms/p/proof-capacity-cryptocurrency.asp#:~:text=Proof%20of%20capacity%20(PoC)%20is,mining%20rights%20and%20validate%20transactions.>)
+- [Proof of Elapsed Time (PoET)](<https://www.investopedia.com/terms/p/proof-elapsed-time-cryptocurrency.asp#:~:text=Proof%20of%20elapsed%20time%20(PoET)%20is%20a%20consensus%20mechanism%20often,they%20are%20allowed%20to%20join.>)
+
+Hopefully, now you understand what VATs are and how they are applied in Distributed Commerce.
+
+## In Web3, even Marketing can be Pro-Consumer
+
+In web2 a marketer only needs to acquire, engage with, and retain the consumer. But in web3, marketers must treat the consumers as shareholders or stake-holders because **they are**.
+
+Another example: If, in some future society, I strapped on my VR headset and wanted to go shopping at the mall for some clothes to weare on my upcoming vacation. I have signed into my account and joined the server where this VR mall is hosted and in doing so I have connected my wallet for a seamless shopping experience. The stores in the mall, have completed the VAT and now can personalize my experience through immersive marketing which I enjoy as a consumer.
+
+While walking through this mall, the advertisements that I see are different from the ones seen by others, they are personalized and tailored to my interests. When I walk into a store, my profile is loaded, allowing me to benefit from brand loyalty programs, get personalized shopping experiences, and streamlining my shopping process to be enjoyable and stimulating.
+
+https://www.reforge.com/blog/web3-marketing-overview
+
+## Loyalty Programs are Most Effective in a Web3 Enabled Store
+
+Do me a favor and run a quick search for "[why do loyalty programs not work](https://stampme.com/why-do-loyalty-programs-fail/#:~:text=Customer%20data%20isn't%20being%20used%20effectively&text=Despite%20having%20access%20to%20a,data%20is%20going%20to%20waste.)".
+
+**Customer data isn't being used effectively**
+
+That is why, that is the #1 reason that loyalty programs do not work. Data is not being used effectively beause, despite having access to a ton of it, the data is often:
+
+1. **Messy** - from different data storage formats and desired data points
+2. **Unstandardized** - when many different companies collect data in many different ways a standard is never reached
+3. **Unproductive** - Due to the rate at which we collect data and the processes we have in place, the data we collect is ofter obfuscated and not useful in making these personalizations, actually causing the process to be harder / worse.
+
+Wallets are made with various standardizations in place and due to that, when you are accessing data from the wallet, such as past transactions, you can expect them to be identical in structure. Wallet data is very intentional becasue any additional or useless information that is stored just makes transactions on the blockckain more computationally expensive.
+
+## Conclusion
+
+In order to imagine the benefits we recieve, as consumers, in a web3 environment we must keep our mind open to what that experience may look like. It can come in many different shapes and sizes, many of which have yet to be discovered as it is still a young space.
+
+What we do know is this: Web3 and The Blockchain were built by consumers for consumers. Through Value-Add Transactions we entrust retail brands with our data on an "as-needed basis" in order to improve our shopping experience through personalization and valueable loyalty programs.
+
+## Extended Sources
+
+- https://www.reforge.com/blog/web3-marketing-overview
+- https://www.geeksforgeeks.org/consensus-algorithms-in-blockchain/
+- https://stampme.com/why-do-loyalty-programs-fail/#:~:text=Customer%20data%20isn't%20being%20used%20effectively&text=Despite%20having%20access%20to%20a,data%20is%20going%20to%20waste.
