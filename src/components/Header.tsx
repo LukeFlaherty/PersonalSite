@@ -16,4 +16,8 @@ const HeaderTitle: React.FC<TextProps> = (props) => (
 	<Text variant="header-title" aria-hidden {...props} />
 )
 
-export { Header, HeaderName, HeaderTitle }
+const HeaderDescription: React.FC<TextProps> = (props) => (
+	<Text variant="header-description" aria-hidden {...props} />
+)
+
+export { Header, HeaderName, HeaderTitle, HeaderDescription }

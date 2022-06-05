@@ -9,6 +9,7 @@ import {
 import SkipNavLink from './SkipNavLink'
 import Logo from './Logo'
 import ColorModeToggle from './ColorModeToggle'
+import TodoIcon from './TodoIcon'
 
 interface NavLinkProps extends ThemeNavLinkProps {
 	href: string
@@ -57,7 +58,6 @@ const Nav: React.FC<BoxProps> = ({ sx, ...props }) => {
 								Home
 							</NavLink>
 						</li>
-
 						<li>
 							<NavLink
 								href="/projects"
@@ -67,7 +67,6 @@ const Nav: React.FC<BoxProps> = ({ sx, ...props }) => {
 								Projects
 							</NavLink>
 						</li>
-
 						<li>
 							<NavLink
 								href="/blog"
@@ -77,8 +76,9 @@ const Nav: React.FC<BoxProps> = ({ sx, ...props }) => {
 							</NavLink>
 						</li>
 					</Flex>
+					<TodoIcon ml={[2, 2]} mr={[0, 0]} />
 
-					<ColorModeToggle ml={[2, 3]} />
+					<ColorModeToggle ml={[0, 0]} />
 				</Flex>
 			</Container>
 		</Box>

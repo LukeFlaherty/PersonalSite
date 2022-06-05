@@ -2,7 +2,12 @@ import * as React from 'react'
 import Head from 'next/head'
 import { Flex, Grid, Text, Container, Heading, Link } from 'theme-ui'
 import { HStack } from '../components/Stack'
-import { Header, HeaderName, HeaderTitle } from '../components/Header'
+import {
+	Header,
+	HeaderDescription,
+	HeaderName,
+	HeaderTitle,
+} from '../components/Header'
 import projects from '../constants/projects.json'
 import metadata from '../constants/metadata.json'
 
@@ -23,6 +28,8 @@ const ProjectsPage: React.FC = () => (
 			<HeaderName>Projects</HeaderName>
 
 			<HeaderTitle>First-World Problem Solvers</HeaderTitle>
+			<br />
+			<HeaderDescription>(in Chronological Order)</HeaderDescription>
 		</Header>
 
 		<Container as="main" mt={5}>
@@ -65,11 +72,19 @@ const ProjectsPage: React.FC = () => (
 								)}
 
 								<HStack gap={2} mt={2}>
-									{website && <Link href={website}>Website</Link>}
+									{website && (
+										<Link href={website} target="_blank">
+											Website
+										</Link>
+									)}
 
 									{website && repo && <span aria-hidden>&#183;</span>}
 
-									{repo && <Link href={repo}>Repository</Link>}
+									{repo && (
+										<Link href={repo} target="_blank">
+											Repository
+										</Link>
+									)}
 								</HStack>
 							</div>
 						</Flex>

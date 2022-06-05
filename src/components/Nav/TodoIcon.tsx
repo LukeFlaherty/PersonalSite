@@ -1,0 +1,44 @@
+import * as React from 'react'
+import { useColorMode, Button } from 'theme-ui'
+import { VisuallyHidden } from '@reach/visually-hidden'
+import { ButtonProps } from '@theme-ui/components'
+
+// Icons courtesy of Feather
+// @link https://feathericons.com/
+
+const TodoIcon: React.FC<ButtonProps> = (props) => {
+	const [colorMode, setColorMode] = useColorMode()
+
+	return (
+		<Button
+			variant="color-mode-toggle"
+			onClick={(): void => {
+				window.open('https://silly-perlman-55a758.netlify.app/', '_blank')
+			}}
+			sx={{
+				svg: { width: '1em', height: '1em', transform: 'translateY(-1px)' },
+			}}
+			{...props}
+		>
+			<VisuallyHidden>Open ToDo App</VisuallyHidden>
+
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				className="feather feather-clipboard"
+			>
+				<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+				<rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+			</svg>
+		</Button>
+	)
+}
+
+export default TodoIcon

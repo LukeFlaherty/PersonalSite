@@ -1,46 +1,58 @@
 [
-  {
-    "title": "Clutter",
-    "description": "This is a storage app built with React and Firebase to serve as a place to store or transfer files or images.  It is complete with full authentication and login functionality.",
-    "website": "https://wizardly-goldberg-2c2922.netlify.app/",
-    "repo": "https://github.com/LukeFlaherty/Clutter"
-  },
-  {
-    "title": "Budgy",
-    "description": "Budgy is my budget assistant.  He helps me manage my monthly income and expense charts in a neat and interactive way. Powered by Speechly you are able to speak your expenses and income right into existance.",
-    "website": "https://inspiring-jennings-96fe41.netlify.app/",
-    "repo": "https://github.com/LukeFlaherty/Budgy"
-  },
-  {
-    "title": "AlgoVision",
-    "description": "Using my classmates' advanced web development understanding and my algorithmic understanding we created this together.  It was fun to be a part of a large scale development project.",
-    "website": "https://stoic-archimedes-8d1d73.netlify.app/",
-    "repo": "https://github.com/LukeFlaherty/AlgoVision"
-  },
-  {
-    "title": "Bug Squasher",
-    "description": "This is a Java SpringBoot app built in my software engineering class.  It is made for logging customer complaints and/or bugs.  It is coplete with user authentication and CRUD functionality.",
-    "website": "https://youtu.be/F9Nk9CPN9tE"
-  },
-  {
-    "title": "GymDolphin",
-    "description": "MERN stack fitness tracker meant for my freinds and I to track our excercise routinues for a challange we were doing.  Yes it is a knockoff of GymShark.  Full CRUD functionality. Used Insomnia for test-driven development.",
-    "website": "https://youtu.be/QFZO4A24Bi8%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cfigure%20class="
-  },
-  {
-    "title": "Weatherman",
-    "description": "A Progressive Web App or PWA that will return the weather in the most overly efficient way possible.  Fully incorporated with service workers.",
-    "website": "https://elated-swirles-797c75.netlify.app/",
-    "repo": "https://github.com/LukeFlaherty/WeatherMan"
-  },
-  {
-    "title": "Quizzy",
-    "description": "A simple quiz about me, a test of my design and development skills",
-    "website": "https://agitated-ardinghelli-82897f.netlify.app/"
-  },
-  {
-    "title": "ToDo App",
-    "description": "A simple favorite.  A ToDo app that tested my design and development skills.",
-    "website": "https://silly-perlman-55a758.netlify.app/"
-  }
+	{
+		"title": "KryptoVerse",
+		"description": "This is an iterative project I have going, using APIs I provide up to date info as a sort of low-fi dashboard for programattically generated Crypto News, Crypto Coin stats, and other Crypto Related Info. I am hoping to add more functionality and styling in the future.  Github REPO Private, not live yet.",
+		"website": "https://github.com/LukeFlaherty/kryptoverse",
+		"repo": "https://github.com/LukeFlaherty/kryptoverse"
+	},
+	{
+		"title": "Junk Drawer",
+		"description": "My first ever Chrome Extension! This was made with my brother as MY first ever Hackathon submission.  While we deviated from the original idea a little bit, this extension still works as a very viable way to store tabs tempraribly in local storage in your browser.",
+		"website": "https://chrome.google.com/webstore/detail/junk-drawer/akohgopagapolapnjcacbncmofomfmnl?hl=en-US",
+		"repo": "https://github.com/LukeFlaherty/Junk-Drawer"
+	},
+	{
+		"title": "Clutter",
+		"description": "This is a storage app built with React and Firebase to serve as a place to store or transfer files or images.  It is complete with full authentication and login functionality.",
+		"website": "https://wizardly-goldberg-2c2922.netlify.app/",
+		"repo": "https://github.com/LukeFlaherty/Clutter"
+	},
+	{
+		"title": "Budgy",
+		"description": "Budgy is my budget assistant.  He helps me manage my monthly income and expense charts in a neat and interactive way. Powered by Speechly you are able to speak your expenses and income right into existance.",
+		"website": "https://inspiring-jennings-96fe41.netlify.app/",
+		"repo": "https://github.com/LukeFlaherty/Budgy"
+	},
+	{
+		"title": "AlgoVision",
+		"description": "Using my classmates' advanced web development understanding and my algorithmic understanding we created this together.  It was fun to be a part of a large scale development project.",
+		"website": "https://stoic-archimedes-8d1d73.netlify.app/",
+		"repo": "https://github.com/LukeFlaherty/AlgoVision"
+	},
+	{
+		"title": "Bug Squasher",
+		"description": "This is a Java SpringBoot app built in my software engineering class.  It is made for logging customer complaints and/or bugs.  It is coplete with user authentication and CRUD functionality.",
+		"website": "https://youtu.be/F9Nk9CPN9tE"
+	},
+	{
+		"title": "GymDolphin",
+		"description": "MERN stack fitness tracker meant for my freinds and I to track our excercise routinues for a challange we were doing.  Yes it is a knockoff of GymShark.  Full CRUD functionality. Used Insomnia for test-driven development.",
+		"website": "https://youtu.be/QFZO4A24Bi8%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%3E%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cfigure%20class="
+	},
+	{
+		"title": "Weatherman",
+		"description": "A Progressive Web App or PWA that will return the weather in the most overly efficient way possible.  Fully incorporated with service workers.",
+		"website": "https://elated-swirles-797c75.netlify.app/",
+		"repo": "https://github.com/LukeFlaherty/WeatherMan"
+	},
+	{
+		"title": "Quizzy",
+		"description": "A simple quiz about me, a test of my design and development skills",
+		"website": "https://agitated-ardinghelli-82897f.netlify.app/"
+	},
+	{
+		"title": "ToDo App",
+		"description": "A simple favorite.  A ToDo app that tested my design and development skills.",
+		"website": "https://silly-perlman-55a758.netlify.app/"
+	}
 ]
