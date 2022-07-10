@@ -21,6 +21,7 @@ const contentSecurityPolicy = `
 	media-src 'none';
 	connect-src *;
 	font-src 'self';
+	frame-src player.vimeo.com www.player.vimeo.com:
 `
 
 const securityHeaders = [
