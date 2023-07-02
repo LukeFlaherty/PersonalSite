@@ -84,60 +84,6 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 				Introduction
 			</Text>
 
-			{/* The `Text` wrapper makes sure spaces are consistently sized */}
-			{/* The old header */}
-			{/* <Text as="div" variant="site-intro" sx={{ display: 'contents' }}>
-				<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
-					My name is Alec Lomas, and I make websites.
-				</Heading>{' '}
-				<Heading as="h2" variant="site-intro">
-					Currently, I&rsquo;m working with{' '}
-					<Link href="https://carvana.com">Carvana</Link> to shape the future of
-					car buying.
-				</Heading>{' '}
-				<Text as="p" variant="site-intro">
-					In the last 30 days, I&rsquo;ve pushed{' '}
-					<Link href="https://github.com/lowmess">
-						<ValueCount value={commits} singular="commit" plural="commits" />
-					</Link>{' '}
-					to GitHub, sent{' '}
-					<Link href="https://twitter.com/lowmess">
-						<ValueCount value={tweets} singular="tweet" plural="tweets" />
-					</Link>
-					, taken <ValueCount value={steps} singular="step" plural="steps" />,
-					and visited{' '}
-					<ValueCount value={places} singular="place" plural="places" />.
-					{album.name && album.artist && (
-						<React.Fragment>
-							{' '}
-							My most played album is{' '}
-							<Link href="https://www.last.fm/user/lowmess/library/albums?date_preset=LAST_30_DAYS">
-								&ldquo;{album.name}&rdquo; by {album.artist}
-							</Link>
-							, and I&rsquo;ve listened to{' '}
-							<Link href="https://www.last.fm/user/lowmess">
-								<ValueCount value={songs} singular="song" plural="songs" />
-							</Link>{' '}
-							overall.
-						</React.Fragment>
-					)}
-					{books.length > 0 && (
-						<React.Fragment>
-							{' '}
-							I am reading{' '}
-							<Link href="https://www.goodreads.com/user/show/27057705-alec-lomas">
-								<ValueCount
-									value={books.length}
-									singular="book"
-									plural="books"
-								/>
-							</Link>{' '}
-							at the moment: <BooksToSentence books={books} />.
-						</React.Fragment>
-					)}
-				</Text>
-			</Text> */}
-
 			{/* my header */}
 			<Text as="div" variant="site-intro" sx={{ display: 'contents' }}>
 				<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
@@ -146,14 +92,12 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 				<Heading as="h2" variant="site-intro">
 					Currently, I am working at{' '}
 					<Link href="https://deloitte.com">Deloitte</Link> building scalale and
-					efficient E-Commerce stores for retail brands with next gen
+					efficient web-based experiences for retail brands with next gen
 					technologies.
 				</Heading>{' '}
 				<Text as="p" variant="site-intro">
-					I am interested in exploring drone technology, startups, nuclear
-					physics, and the metaverse. I am interested in exploring Web 3, The
-					Metaverse, Drone Technology, Electric Rocket Propulsion, and Nuclear
-					Physics.
+					I am interested in exploring Web3, The Metaverse, Drone Technology,
+					and Nuclear Energy.
 				</Text>
 			</Text>
 		</Container>
