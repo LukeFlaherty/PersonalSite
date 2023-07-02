@@ -141,7 +141,7 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 			{/* my header */}
 			<Text as="div" variant="site-intro" sx={{ display: 'contents' }}>
 				<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
-					My name is Luke Flaherty and I am an engineer.
+					My name is Luke Flagerty and I am an engineer.
 				</Heading>{' '}
 				<Heading as="h2" variant="site-intro">
 					Currently, I am working at{' '}
