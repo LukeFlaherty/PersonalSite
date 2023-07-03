@@ -84,7 +84,7 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 				Introduction
 			</Text>
 
-			{/* my header */}
+			{/* my header
 			<Text as="div" variant="site-intro" sx={{ display: 'contents' }}>
 				<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
 					My name is Luke Flaherty and I am an engineer.
@@ -99,6 +99,37 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 					I am interested in exploring Web3, The Metaverse, Drone Technology,
 					and Nuclear Energy.
 				</Text>
+			</Text> */}
+
+			{/* my new header */}
+			<Text as="div" variant="site-intro" sx={{ display: 'contents' }}>
+				<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
+					My name is Luke Flaherty and I am an engineer.
+					<br />
+					<br />
+				</Heading>{' '}
+				<Heading as="h2" variant="site-intro">
+					Graduate of <Link href="https://www.charlotte.edu/">UNCC</Link> B.S.
+					in{' '}
+					<Link href="https://cci.charlotte.edu/departments/computer-science/about-us/">
+						Computer Science: ML And Robotics
+					</Link>{' '}
+					<br />+ 1/2 M.A in{' '}
+					<Link href="https://dsba.charlotte.edu/about-us/program-overview">
+						Data Sciecne
+					</Link>
+					.
+					<br />
+					<br />
+					Left college early to build cutting edge Web Experiences @
+					<Link href="https://deloitte.com">Deloitte</Link>.
+					<br />
+					<br />I have since left them and am looking for a new venture that
+					excited and challenges me ASAP.
+					<br />
+					<br />
+					Press <Link href="lukejf.com">HERE</Link> to talk more!
+				</Heading>{' '}
 			</Text>
 		</Container>
 	)

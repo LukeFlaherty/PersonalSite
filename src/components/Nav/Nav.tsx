@@ -78,7 +78,7 @@ const Nav: React.FC<BoxProps> = ({ sx, ...props }) => {
 						</li>
 					</Flex>
 
-					<RockClimbingIcon ml={[2, 2]} mr={[0, 0]} />
+					{/* <RockClimbingIcon ml={[2, 2]} mr={[0, 0]} /> */}
 
 					<TodoIcon ml={[0, 0]} mr={[0, 0]} />
 

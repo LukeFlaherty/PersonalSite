@@ -7,8 +7,6 @@ import { ButtonProps } from '@theme-ui/components'
 // @link https://feathericons.com/
 
 const TodoIcon: React.FC<ButtonProps> = (props) => {
-	const [colorMode, setColorMode] = useColorMode()
-
 	return (
 		<Button
 			variant="color-mode-toggle"
