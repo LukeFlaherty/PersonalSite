@@ -128,7 +128,11 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 					excited and challenges me ASAP.
 					<br />
 					<br />
-					Press <Link href="lukejf.com">HERE</Link> to talk more!
+					<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
+						<Link href="https://calendly.com/lukejflaherty" target="_blank">
+							Press HERE to talk more!
+						</Link>{' '}
+					</Heading>{' '}
 				</Heading>{' '}
 			</Text>
 		</Container>
