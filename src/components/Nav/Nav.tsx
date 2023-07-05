@@ -9,7 +9,7 @@ import {
 import SkipNavLink from './SkipNavLink'
 import Logo from './Logo'
 import ColorModeToggle from './ColorModeToggle'
-import TodoIcon from './TodoIcon'
+import NotesIcon from './NotesIcon'
 import RockClimbingIcon from './RockClimbingIcon'
 
 interface NavLinkProps extends ThemeNavLinkProps {
@@ -80,7 +80,7 @@ const Nav: React.FC<BoxProps> = ({ sx, ...props }) => {
 
 					{/* <RockClimbingIcon ml={[2, 2]} mr={[0, 0]} /> */}
 
-					<TodoIcon ml={[0, 0]} mr={[0, 0]} />
+					<NotesIcon ml={[0, 0]} mr={[0, 0]} />
 
 					<ColorModeToggle ml={[0, 0]} />
 				</Flex>

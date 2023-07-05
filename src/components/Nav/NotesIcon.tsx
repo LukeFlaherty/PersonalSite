@@ -6,19 +6,19 @@ import { ButtonProps } from '@theme-ui/components'
 // Icons courtesy of Feather
 // @link https://feathericons.com/
 
-const TodoIcon: React.FC<ButtonProps> = (props) => {
+const NotesIcon: React.FC<ButtonProps> = (props) => {
 	return (
 		<Button
-			variant="color-mode-toggle"
-			onClick={(): void => {
-				window.open('https://silly-perlman-55a758.netlify.app/', '_blank')
+			onClick={() => {
+				window.open('https://silly-perlman-55a758.netlify.app', '_blank')
 			}}
+			variant="color-mode-toggle"
 			sx={{
 				svg: { width: '1em', height: '1em', transform: 'translateY(-1px)' },
 			}}
 			{...props}
 		>
-			<VisuallyHidden>Open ToDo App</VisuallyHidden>
+			<VisuallyHidden>Open Notes App</VisuallyHidden>
 
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -39,4 +39,4 @@ const TodoIcon: React.FC<ButtonProps> = (props) => {
 	)
 }
 
-export default TodoIcon
+export default NotesIcon
