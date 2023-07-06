@@ -124,8 +124,9 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 					Left college early to build cutting edge Web Experiences @
 					<Link href="https://deloitte.com">Deloitte</Link>.
 					<br />
-					<br />I have since left them and am looking for a new venture that
-					excited and challenges me ASAP.
+					<br />
+					Have since left and am looking for the next venture that excites and
+					challenges me.
 					<br />
 					<br />
 					<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
