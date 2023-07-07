@@ -116,7 +116,7 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 					</Link>{' '}
 					<br />+ 1/2 M.A in{' '}
 					<Link href="https://dsba.charlotte.edu/about-us/program-overview">
-						Data Sciecne
+						Data Science
 					</Link>
 					.
 					<br />
