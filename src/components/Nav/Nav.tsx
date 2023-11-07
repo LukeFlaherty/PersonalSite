@@ -72,8 +72,18 @@ const Nav: React.FC<BoxProps> = ({ sx, ...props }) => {
 							<NavLink
 								href="/blog"
 								aria-current={pathname.includes('/blog') ? 'page' : null}
+								mr={[1, 2]}
 							>
 								Blog
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								href="/resume"
+								aria-current={pathname.includes('/resume') ? 'page' : null}
+								mr={[1, 2]}
+							>
+								Resume
 							</NavLink>
 						</li>
 					</Flex>

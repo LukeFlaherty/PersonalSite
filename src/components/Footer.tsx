@@ -49,6 +49,10 @@ const Footer: React.FC<BoxProps> = (props) => (
 						</li>
 
 						<li>
+							<FooterLink href="/resume">Resume</FooterLink>
+						</li>
+
+						<li>
 							<FooterLink href="/colophon">Colophon</FooterLink>
 						</li>
 
@@ -99,7 +103,10 @@ const Footer: React.FC<BoxProps> = (props) => (
 						</li>
 
 						<li>
-							<FooterLink href="https://www.linkedin.com/in/luke-flaherty-767465192/" external>
+							<FooterLink
+								href="https://www.linkedin.com/in/luke-flaherty-767465192/"
+								external
+							>
 								LinkedIn
 							</FooterLink>
 						</li>
@@ -109,11 +116,6 @@ const Footer: React.FC<BoxProps> = (props) => (
 								Résumé
 							</FooterLink>
 						</li> */}
-						<li>
-							<FooterLink href="https://www.linkedin.com/in/luke-flaherty-767465192/detail/overlay-view/urn:li:fsd_profileTreasuryMedia:(ACoAAC1GG_8B8DT6ww28BvIlAARdnyX1RvGfK5k,1635454319373)/" external>
-								Résumé
-							</FooterLink>
-						</li>
 					</Text>
 				</Box>
 

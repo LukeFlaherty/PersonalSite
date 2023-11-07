@@ -118,15 +118,16 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 					<Link href="https://dsba.charlotte.edu/about-us/program-overview">
 						Data Science
 					</Link>
-					.
 					<br />
 					<br />
-					Left college early to build cutting edge Web Experiences @
-					<Link href="https://deloitte.com">Deloitte</Link>.
+					Left college early to build cutting edge Web Experiences @{' '}
+					<Link href="https://deloitte.com">Deloitte</Link>
 					<br />
+					<br />I left in June 2023 to build @{' '}
+					<Link href="https://juke.fyi">Juke.fyi</Link>
 					<br />
-					I have since left and am looking for the next venture that excites and
-					challenges me.
+					<br />I am now taking a step back from Juke and am searching for my
+					next opportunity to build!
 					<br />
 					<br />
 					<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
