@@ -125,7 +125,7 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 					<Link href="https://deloitte.com">Deloitte</Link>.
 					<br />
 					<br />
-					Have since left and am looking for the next venture that excites and
+					I have since left and am looking for the next venture that excites and
 					challenges me.
 					<br />
 					<br />
