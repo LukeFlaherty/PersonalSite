@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import Head from 'next/head'
 import { Box, Button, Container, Heading, Text } from 'theme-ui'

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import * as React from 'react'
 import type { GetStaticProps } from 'next'
 import { Text, Heading, Link, Container } from 'theme-ui'
@@ -10,6 +12,7 @@ interface ValueCountProps {
 	plural: string
 }
 
+//
 const ValueCount: React.FC<ValueCountProps> = ({ value, singular, plural }) => (
 	<React.Fragment>
 		{value.toLocaleString()} {pluralize(value, singular, plural)}

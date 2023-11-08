@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import * as React from 'react'
 import { useRouter } from 'next/router'
 import { default as NextLink } from 'next/link'

@@ -1,11 +1,8 @@
 import * as React from 'react'
 import Head from 'next/head'
 import { Box, Grid, Text, Container, Heading } from 'theme-ui'
-import { useEffect } from 'react'
 import { Header, HeaderName, HeaderTitle } from '../components/Header'
-import Link from '../components/Link'
 import metadata from '../constants/metadata.json'
-import { allPosts } from '../lib/posts'
 import { Meta } from '../types/posts'
 import climbingDescriptions from '../constants/climbingDescriptions.json'
 
@@ -28,7 +25,7 @@ const ClimbingPage: React.FC<ClimbingPageProps> = () => {
 
 			<Container as="main" mt={[4, 5]}>
 				<Grid columns={[null, 2, '27rem 1fr']} gap={[4, 5]}>
-					{climbingDescriptions.map((description, index) => {
+					{climbingDescriptions.map((description) => {
 						return (
 							<Box
 								key={description.title}

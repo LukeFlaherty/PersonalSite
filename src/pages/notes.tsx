@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Head from 'next/head'
 import { Header, HeaderName, HeaderTitle } from '../components/Header'
-import Link from '../components/Link'
 import metadata from '../constants/metadata.json'
 import { Meta } from '../types/posts'
 
