@@ -1,12 +1,17 @@
 import React from 'react'
 import Head from 'next/head'
-import { Box, Container, Heading, Text } from 'theme-ui'
+import { Box, Button, Container, Heading, Text } from 'theme-ui'
 import Link from '../components/Link'
 import { Header, HeaderName, HeaderTitle } from '../components/Header'
+import DownloadButton from '../components/DownloadButton'
 
 interface ResumePageProps {}
 
 const ResumePage: React.FC<ResumePageProps> = () => {
+	const handleDownloadResume = () => {
+		// Add logic to trigger the download of the resume file here
+		// For example, you can use a library like file-saver.js or create a download link.
+	}
 	return (
 		<>
 			<Head>
@@ -148,7 +153,7 @@ const ResumePage: React.FC<ResumePageProps> = () => {
 								Owned Front-End development deliverables implementing{' '}
 								<span style={{ color: 'hsl(131, 11%, 49%)' }}>300+</span> lines
 								of production code during fast-paced
-								<span style={{ color: 'hsl(131, 11%, 49%)' }}>Agile</span>{' '}
+								<span style={{ color: 'hsl(131, 11%, 49%)' }}> Agile</span>{' '}
 								delivery for a large-scale B2C commerce platform with multiple
 								third-parties.
 							</li>
@@ -228,6 +233,31 @@ const ResumePage: React.FC<ResumePageProps> = () => {
 					<Text as="p" sx={{ textAlign: 'center' }}>
 						<Link href="https://github.com/lukeflaherty">
 							GitHub Profile for more details and projects
+						</Link>
+					</Text>
+				</Box>
+
+				{/* <Box as="footer" mt={4} mb={0}>
+					<Text as="p" sx={{ textAlign: 'center' }}>
+						<Link href="">
+							<DownloadButton onClick={handleDownloadResume} />
+						</Link>
+					</Text>
+				</Box> */}
+				{/* <Box as="footer" mt={4} mb={0}>
+					<Text as="p" sx={{ textAlign: 'center' }}>
+						<Link href="">Download Resume</Link>
+					</Text>
+				</Box> */}
+				<Box as="footer" mt={4} mb={0}>
+					<Text
+						as="p"
+						style={{ color: 'hsl(131, 11%, 49%)' }}
+						sx={{ textAlign: 'center' }}
+					>
+						{/* Use your custom Link component with the download prop */}
+						<Link href="Luke_Flaherty_resume.pdf" download>
+							Download Resume
 						</Link>
 					</Text>
 				</Box>
