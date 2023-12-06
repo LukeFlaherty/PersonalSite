@@ -12,6 +12,12 @@ class MyDocument extends Document {
 				<Head>
 					<meta charSet="utf-8" />
 
+					{/* Add the CSP meta tag here */}
+					<meta
+						httpEquiv="Content-Security-Policy"
+						content="default-src 'self'; img-src *; child-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval';"
+					/>
+
 					{/* theming */}
 					<meta name="theme-color" content={colors.muted} />
 					<meta name="apple-mobile-web-app-title" content={metadata.title} />

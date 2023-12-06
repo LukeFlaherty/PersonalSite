@@ -13,15 +13,15 @@ const withMDX = require('@next/mdx')({
 })
 
 const contentSecurityPolicy = `
-	default-src 'self';
-	script-src 'self' 'unsafe-eval' 'unsafe-inline' *.codepen.io;
-	child-src https://codepen.io;
-	style-src 'self' 'unsafe-inline';
-	img-src 'self' blob: data:;
-	media-src 'none';
-	connect-src *;
-	font-src 'self';
-	frame-src player.vimeo.com www.player.vimeo.com:
+  default-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.codepen.io;
+  child-src https://codepen.io;
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' blob: data: https://static.wikia.nocookie.net;
+  media-src 'none';
+  connect-src *;
+  font-src 'self';
+  frame-src player.vimeo.com www.player.vimeo.com:
 `
 
 const securityHeaders = [
