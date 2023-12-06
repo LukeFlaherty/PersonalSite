@@ -119,9 +119,9 @@ const SquishPage: React.FC = () => {
 			{/* Message about the script */}
 			{showScript && (
 				<Text sx={{ mt: 2, fontSize: 1, color: 'text' }}>
-					I used this script to scrape the Squishmallow website for over 12,000
-					lines of data on the squishmallows name, bio, and an image for them
-					all!
+					I wrote this script from scratch! It uses robots to scrape the
+					Squishmallow website for over 12,000 lines of data on the
+					squishmallows name, bio, and an image for them all!
 				</Text>
 			)}
 
