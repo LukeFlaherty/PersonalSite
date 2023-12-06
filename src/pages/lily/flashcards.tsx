@@ -15,6 +15,8 @@ const FlashcardsPage: React.FC = () => {
 	const [editingSetIndex, setEditingSetIndex] = useState(-1)
 	const [editingCardIndex, setEditingCardIndex] = useState(-1)
 
+	const [selectedSet, setSelectedSet] = useState(null)
+
 	// Add state for temporary storage during editing
 	const [tempSet, setTempSet] = useState({ title: '', cards: [] })
 
@@ -52,6 +54,12 @@ const FlashcardsPage: React.FC = () => {
 
 	// Function to handle selecting a set
 	const handleSelectSet = (index: number) => {
+		if (index === -1) {
+			return // Ignore the placeholder option
+		}
+
+		setSelectedSet(index)
+
 		setSelectedSetIndex(index)
 		setCurrentSet(flashcardSets[index])
 	}
@@ -109,6 +117,31 @@ const FlashcardsPage: React.FC = () => {
 		setEditingCardIndex(-1)
 	}
 
+	const DropdownIcon: React.FC = () => (
+		<svg
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			style={{
+				position: 'absolute',
+				right: '10px',
+				top: '50%',
+				transform: 'translateY(-50%)',
+				pointerEvents: 'none', // Ignore mouse events
+			}}
+		>
+			<path
+				d="M5 8L10 13L15 8"
+				stroke="#C4C4C4"
+				strokeWidth="2"
+				strokeLinecap="round"
+				strokeLinejoin="round"
+			/>
+		</svg>
+	)
+
 	return (
 		<Container as="main" mt={5} sx={{ maxWidth: '100%' }}>
 			<Head>
@@ -128,24 +161,47 @@ const FlashcardsPage: React.FC = () => {
 							mb={3}
 							sx={{ bg: 'muted', p: 3, borderRadius: '4px' }}
 						>
-							<Text sx={{ fontSize: 3, fontWeight: 'bold' }}>{set.title}</Text>
-							<Button mr={2} onClick={() => startEditingSet(setIndex)}>
-								Edit Set
-							</Button>
-							<Button onClick={() => deleteSet(setIndex)}>Delete Set</Button>
+							<Flex
+								sx={{ justifyContent: 'space-between', alignItems: 'center' }}
+							>
+								<Text
+									sx={{
+										fontSize: 3,
+										fontWeight: 'bold',
+										overflow: 'hidden',
+										textOverflow: 'ellipsis',
+										whiteSpace: 'nowrap',
+									}}
+								>
+									{set.title}
+								</Text>
+								<Box
+									style={{
+										display: 'flex',
+										flexDirection: 'row',
+										justifyContent: 'center',
+										alignItems: 'center',
+										minWidth: '210px',
+									}}
+								>
+									<Button mr={2} onClick={() => startEditingSet(setIndex)}>
+										Edit Set
+									</Button>
+									<Button onClick={() => deleteSet(setIndex)}>
+										Delete Set
+									</Button>
+								</Box>
+							</Flex>
 							{set.cards.map((card, cardIndex) => (
 								<Flex key={cardIndex} mt={2} sx={{ alignItems: 'center' }}>
 									<Text sx={{ fontSize: 2, mr: 2 }}>
 										{card.front} - {card.back}
 									</Text>
-									<Button
-										mr={2}
-										onClick={() => startEditingCard(setIndex, cardIndex)}
-									>
-										Edit Card
+									<Button mr={2} onClick={() => startEditingSet(setIndex)}>
+										Edit Set
 									</Button>
-									<Button onClick={() => deleteCard(setIndex, cardIndex)}>
-										Delete Card
+									<Button onClick={() => deleteSet(setIndex)}>
+										Delete Set
 									</Button>
 								</Flex>
 							))}
@@ -194,21 +250,45 @@ const FlashcardsPage: React.FC = () => {
 							</Flex>
 						))}
 						<Box mb={3}>
-							<select
-								value={selectedSetIndex}
-								onChange={(e) => handleSelectSet(Number(e.target.value))}
-							>
-								<option value={-1}>Select a Set</option>
-								{flashcardSets.map((set, index) => (
-									<option key={index} value={index}>
-										{set.title}
-									</option>
-								))}
-							</select>
+							<div style={{ position: 'relative' }}>
+								<select
+									value={selectedSetIndex}
+									onChange={(e) => handleSelectSet(Number(e.target.value))}
+									style={{
+										width: '100%', // Make the select take up the full width of its container
+										padding: '10px', // Add some padding
+										fontSize: '16px', // Increase the font size
+										borderRadius: '4px', // Add some border radius
+										border: '1px solid gray', // Add a border
+										appearance: 'none', // Remove default appearance
+										backgroundColor: 'white', // Set a background color
+										paddingRight: '30px', // Make room for the icon
+									}}
+								>
+									<option value={-1}>Select a Set</option>
+									{flashcardSets.map((set, index) => (
+										<option key={index} value={index}>
+											{set.title}
+										</option>
+									))}
+								</select>
+								<DropdownIcon />
+							</div>
 						</Box>
-						<Button mr={2} onClick={addCardToSet}>
+						<Button
+							mr={2}
+							disabled={selectedSet === null}
+							onClick={addCardToSet}
+							sx={{
+								backgroundColor: selectedSet === null ? 'gray' : 'primary',
+								color: 'white',
+								cursor: selectedSet === null ? 'not-allowed' : 'pointer',
+								marginBottom: '20px',
+							}}
+						>
 							Add Card to Set
 						</Button>
+						{selectedSet === null && <Text>Select a set to add a card</Text>}
 						<Button onClick={addSet}>Create Set</Button>
 					</Flex>
 
