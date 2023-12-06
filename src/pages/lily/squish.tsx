@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
 import { Button, Text, Box, Image, Link } from 'theme-ui'
-import squishmallows from './lilyAssets/squishmallows.json'
+import squishmallows from '../../assets/lilyAssets/squishmallows.json'
 
 interface Squishmallow {
 	name: string
