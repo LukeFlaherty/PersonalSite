@@ -42,11 +42,11 @@ const links: Array<Link> = [
 const LilyPage: React.FC = () => (
 	<React.Fragment>
 		<Head>
-			<title key="title">Lily&aposs Page {metadata.titleSuffix}</title>
+			<title key="title">Lily&apos;s Page {metadata.titleSuffix}</title>
 		</Head>
 
 		<Header>
-			<HeaderName>Lily&aposs Page</HeaderName>
+			<HeaderName>Lily&apos;s Page</HeaderName>
 
 			<HeaderTitle>Links for Lily</HeaderTitle>
 			<br />
