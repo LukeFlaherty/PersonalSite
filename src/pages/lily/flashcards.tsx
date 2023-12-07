@@ -36,9 +36,12 @@ const FlashcardsPage: React.FC = () => {
 	// Function to add a new flashcard set
 	const addSet = () => {
 		if (currentSet.title) {
-			setFlashcardSets([...flashcardSets, currentSet])
+			setFlashcardSets((prevSets) => {
+				const newSets = [...prevSets, currentSet]
+				localStorage.setItem('flashcardSets', JSON.stringify(newSets))
+				return newSets
+			})
 			setCurrentSet({ title: '', cards: [] })
-			localStorage.setItem('flashcardSets', JSON.stringify(flashcardSets))
 		}
 	}
 
@@ -54,14 +57,15 @@ const FlashcardsPage: React.FC = () => {
 
 	// Function to handle selecting a set
 	const handleSelectSet = (index: number) => {
-		if (index === -1) {
-			return // Ignore the placeholder option
+		if (index === selectedSetIndex || index === -1) {
+			setSelectedSetIndex(-1) // Unselect the set if it's clicked again or the placeholder option is selected
+			setSelectedSet(null) // Clear the selected set
+			setCurrentSet({ title: '', cards: [] }) // Clear the current set
+		} else {
+			setSelectedSetIndex(index)
+			setSelectedSet(flashcardSets[index]) // Set the selected set to the selected flashcard set
+			setCurrentSet(flashcardSets[index]) // Set the current set to the selected flashcard set
 		}
-
-		setSelectedSet(index)
-
-		setSelectedSetIndex(index)
-		setCurrentSet(flashcardSets[index])
 	}
 
 	// Function to add a new flashcard to the selected set
@@ -81,13 +85,6 @@ const FlashcardsPage: React.FC = () => {
 		setFlashcardSets(updatedSets)
 	}
 
-	// Function to delete a specific card from a set
-	const deleteCard = (setIndex: number, cardIndex: number) => {
-		const updatedSets = [...flashcardSets]
-		updatedSets[setIndex].cards.splice(cardIndex, 1)
-		setFlashcardSets(updatedSets)
-	}
-
 	// Function to start editing a flashcard set
 	const startEditingSet = (index: number) => {
 		setIsEditingSet(true)
@@ -95,20 +92,16 @@ const FlashcardsPage: React.FC = () => {
 		setTempSet(flashcardSets[index])
 	}
 
-	// Function to start editing a specific card
-	const startEditingCard = (setIndex: number, cardIndex: number) => {
-		setIsEditingSet(false)
-		setEditingSetIndex(setIndex)
-		setEditingCardIndex(cardIndex)
-		setTempSet({ ...flashcardSets[setIndex] })
-	}
-
 	// Function to save edits for a set or card
 	const saveEdits = () => {
 		const updatedSets = [...flashcardSets]
 		if (isEditingSet && editingSetIndex >= 0) {
 			updatedSets[editingSetIndex] = tempSet
-		} else if (editingCardIndex >= 0) {
+		} else if (
+			editingCardIndex >= 0 &&
+			updatedSets[editingSetIndex] &&
+			updatedSets[editingSetIndex].cards
+		) {
 			updatedSets[editingSetIndex].cards[editingCardIndex] = tempSet.cards[0]
 		}
 		setFlashcardSets(updatedSets)
@@ -159,7 +152,20 @@ const FlashcardsPage: React.FC = () => {
 						<Box
 							key={setIndex}
 							mb={3}
-							sx={{ bg: 'muted', p: 3, borderRadius: '4px' }}
+							sx={{
+								bg: 'muted',
+								p: 3,
+								borderRadius: '4px',
+								borderColor:
+									selectedSetIndex === setIndex ? 'primary' : 'transparent', // Highlight the selected set
+								borderWidth: '2px',
+								borderStyle: 'solid',
+								':hover': {
+									borderColor: 'primary', // Change the border color on hover
+								},
+								cursor: 'pointer', // Make the entire box clickable
+							}}
+							onClick={() => handleSelectSet(setIndex)} // Select the set when the box is clicked
 						>
 							<Flex
 								sx={{ justifyContent: 'space-between', alignItems: 'center' }}
@@ -171,7 +177,9 @@ const FlashcardsPage: React.FC = () => {
 										overflow: 'hidden',
 										textOverflow: 'ellipsis',
 										whiteSpace: 'nowrap',
+										cursor: 'pointer', // Make the title clickable
 									}}
+									// onClick={() => handleSelectSet(setIndex)} // Select the set when the title is clicked
 								>
 									{set.title}
 								</Text>
@@ -197,12 +205,6 @@ const FlashcardsPage: React.FC = () => {
 									<Text sx={{ fontSize: 2, mr: 2 }}>
 										{card.front} - {card.back}
 									</Text>
-									<Button mr={2} onClick={() => startEditingSet(setIndex)}>
-										Edit Set
-									</Button>
-									<Button onClick={() => deleteSet(setIndex)}>
-										Delete Set
-									</Button>
 								</Flex>
 							))}
 						</Box>
@@ -219,41 +221,42 @@ const FlashcardsPage: React.FC = () => {
 							mb={3}
 							type="text"
 							placeholder="Flashcard Set Title"
-							value={currentSet.title}
-							onChange={(e) =>
+							value={currentSet ? currentSet.title : ''} // Check if currentSet is not null before accessing its title
+							onBlur={(e) =>
 								setCurrentSet({ ...currentSet, title: e.target.value })
 							}
 						/>
-						{currentSet.cards.map((card, index) => (
-							<Flex key={index} mb={2}>
-								<Input
-									mr={2}
-									type="text"
-									placeholder="Front of Card"
-									value={card.front}
-									onChange={(e) => {
-										const newCards = [...currentSet.cards]
-										newCards[index].front = e.target.value
-										setCurrentSet({ ...currentSet, cards: newCards })
-									}}
-								/>
-								<Input
-									type="text"
-									placeholder="Back of Card"
-									value={card.back}
-									onChange={(e) => {
-										const newCards = [...currentSet.cards]
-										newCards[index].back = e.target.value
-										setCurrentSet({ ...currentSet, cards: newCards })
-									}}
-								/>
-							</Flex>
-						))}
+						{currentSet &&
+							currentSet.cards.map((card, index) => (
+								<Flex key={index} mb={2}>
+									<Input
+										mr={2}
+										type="text"
+										placeholder="Front of Card"
+										value={card.front}
+										onBlur={(e) => {
+											const newCards = [...currentSet.cards]
+											newCards[index].front = e.target.value
+											setCurrentSet({ ...currentSet, cards: newCards })
+										}}
+									/>
+									<Input
+										type="text"
+										placeholder="Back of Card"
+										value={card.back}
+										onBlur={(e) => {
+											const newCards = [...currentSet.cards]
+											newCards[index].back = e.target.value
+											setCurrentSet({ ...currentSet, cards: newCards })
+										}}
+									/>
+								</Flex>
+							))}
 						<Box mb={3}>
 							<div style={{ position: 'relative' }}>
 								<select
 									value={selectedSetIndex}
-									onChange={(e) => handleSelectSet(Number(e.target.value))}
+									onBlur={(e) => handleSelectSet(Number(e.target.value))}
 									style={{
 										width: '100%', // Make the select take up the full width of its container
 										padding: '10px', // Add some padding
@@ -265,7 +268,9 @@ const FlashcardsPage: React.FC = () => {
 										paddingRight: '30px', // Make room for the icon
 									}}
 								>
-									<option value={-1}>Select a Set</option>
+									<option value={-1} onClick={() => handleSelectSet(-1)}>
+										Select a Set
+									</option>
 									{flashcardSets.map((set, index) => (
 										<option key={index} value={index}>
 											{set.title}
@@ -298,7 +303,7 @@ const FlashcardsPage: React.FC = () => {
 							<Input
 								type="text"
 								value={tempSet.title}
-								onChange={(e) =>
+								onBlur={(e) =>
 									setTempSet({ ...tempSet, title: e.target.value })
 								}
 							/>
@@ -313,11 +318,21 @@ const FlashcardsPage: React.FC = () => {
 								mb={2}
 								type="text"
 								placeholder="Front of Card"
-								value={tempSet.cards[0].front}
-								onChange={(e) =>
+								value={
+									tempSet.cards && tempSet.cards.length > editingCardIndex
+										? tempSet.cards[editingCardIndex].front
+										: ''
+								}
+								onBlur={(e) =>
 									setTempSet({
 										...tempSet,
-										cards: [{ ...tempSet.cards[0], front: e.target.value }],
+										cards: tempSet.cards
+											? tempSet.cards.map((card, index) =>
+													index === editingCardIndex
+														? { ...card, front: e.target.value }
+														: card
+											  )
+											: [],
 									})
 								}
 							/>
@@ -325,11 +340,21 @@ const FlashcardsPage: React.FC = () => {
 								mb={2}
 								type="text"
 								placeholder="Back of Card"
-								value={tempSet.cards[0].back}
-								onChange={(e) =>
+								value={
+									tempSet.cards && tempSet.cards.length > editingCardIndex
+										? tempSet.cards[editingCardIndex].back
+										: ''
+								}
+								onBlur={(e) =>
 									setTempSet({
 										...tempSet,
-										cards: [{ ...tempSet.cards[0], back: e.target.value }],
+										cards: tempSet.cards
+											? tempSet.cards.map((card, index) =>
+													index === editingCardIndex
+														? { ...card, back: e.target.value }
+														: card
+											  )
+											: [],
 									})
 								}
 							/>
