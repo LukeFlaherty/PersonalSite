@@ -22,11 +22,6 @@ const links: Array<Link> = [
 		href: '/lily/squish',
 	},
 	{
-		title: 'Flashcards',
-		description: 'This one lets you make flashcards for studying and save them',
-		href: '/lily/flashcards',
-	},
-	{
 		title: 'Saved Links',
 		description: 'This holds all your important links',
 		href: '/lily/savedlinks',
