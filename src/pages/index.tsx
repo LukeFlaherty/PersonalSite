@@ -129,8 +129,7 @@ const IndexPage: React.FC<IndexProps> = ({ stats }) => {
 					<br />I left in June 2023 to build @{' '}
 					<Link href="https://juke.fyi">Juke.fyi</Link>
 					<br />
-					<br />I am now taking a step back from Juke and am searching for my
-					next opportunity to build!
+					<br />I am now taking a step back from Juke to build <Link href="https://www.waveconsulting.biz/">WAVE Consulting</Link>!
 					<br />
 					<br />
 					<Heading as="h1" variant="site-intro" sx={{ fontWeight: 'bold' }}>
